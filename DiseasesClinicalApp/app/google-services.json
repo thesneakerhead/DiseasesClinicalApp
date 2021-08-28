@@ -36,43 +36,6 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:303895926741:android:ead0e8749773380deb0f5c",
-        "android_client_info": {
-          "package_name": "com.example.diseasesclinicalapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "303895926741-prm2kh9gn46mq8gm5qa6g68vsnbu5i9e.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.diseasesclinicalapp",
-            "certificate_hash": "04416160c8c8b29be95dfb6bf692a67dbab67761"
-          }
-        },
-        {
-          "client_id": "303895926741-srrvijtbt6qej9tnp75pgi2frv3hl7h9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBMGgbLppI7TeD2vp-CKASPalrlyqDENTs"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "303895926741-srrvijtbt6qej9tnp75pgi2frv3hl7h9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:303895926741:android:aca9bd622ce5c5b5eb0f5c",
         "android_client_info": {
           "package_name": "com.example.firestorefuzzysearch"
