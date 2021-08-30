@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "303895926741",
+    "firebase_url": "https://ase-clinic-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "ase-clinic",
     "storage_bucket": "ase-clinic.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "303895926741-6p2l9tj4af7la13nfgo0aeg5ojlmbocu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cz3002.diseasesclinicalapp",
+            "certificate_hash": "04416160c8c8b29be95dfb6bf692a67dbab67761"
+          }
+        },
         {
           "client_id": "303895926741-srrvijtbt6qej9tnp75pgi2frv3hl7h9.apps.googleusercontent.com",
           "client_type": 3
