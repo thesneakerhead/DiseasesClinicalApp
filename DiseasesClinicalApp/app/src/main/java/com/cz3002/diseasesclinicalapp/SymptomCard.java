@@ -14,11 +14,6 @@ public class SymptomCard {
     public String clinic;
     public String date;
     public ConsultationStatus status;
-    enum ConsultationStatus{
-        COMPLETED,
-        ONGOING,
-        CANCELLED
-    }
 }
 
 
