@@ -7,19 +7,28 @@ import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseDatabaseManager {
-    public FirebaseDatabase instatiateAppDatabase(Context context)
+    public FirebaseApp appDBApp;
+    public FirebaseApp clinicDBApp;
+    public FirebaseDatabase appDatabase;
+    public FirebaseDatabase clinicDatabase;
+    public FirebaseDatabaseManager(Context context)
+    {
+        instatiateAppDatabase(context);
+        instantiateClinicDatabase(context);
+    }
+    public void instatiateAppDatabase(Context context)
     {
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setApplicationId("1:303895926741:android:aca9bd622ce5c5b5eb0f5c")
+                .setApplicationId("1:303895926741:android:255d85c415995442eb0f5c")
                 .setApiKey("AIzaSyBMGgbLppI7TeD2vp-CKASPalrlyqDENTs")
                 .setDatabaseUrl("https://ase-clinic-default-rtdb.asia-southeast1.firebasedatabase.app")
                 .build();
         FirebaseApp.initializeApp(context, options,"appDB");
         FirebaseApp initApp = FirebaseApp.getInstance("appDB");
-        FirebaseDatabase appDatabase = FirebaseDatabase.getInstance(initApp);
-        return appDatabase;
+        this.appDBApp=initApp;
+        this.appDatabase = FirebaseDatabase.getInstance(initApp);
     }
-    public FirebaseDatabase instantiateClinicDatabase(Context context)
+    public void instantiateClinicDatabase(Context context)
     {
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setApplicationId("1:561455279142:android:bac250ac7ac82919d74ae7")
@@ -28,7 +37,7 @@ public class FirebaseDatabaseManager {
                 .build();
         FirebaseApp.initializeApp(context, options,"clinicDB");
         FirebaseApp initApp = FirebaseApp.getInstance("clinicDB");
-        FirebaseDatabase ClinicDatabase = FirebaseDatabase.getInstance(initApp);
-        return ClinicDatabase;
+        this.clinicDBApp=initApp;
+        this.clinicDatabase = FirebaseDatabase.getInstance(initApp);
     }
 }

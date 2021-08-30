@@ -13,7 +13,7 @@ public class SymptomCard {
     public ArrayList<String> symptoms;
     public String clinic;
     public String date;
-    public ConsultationStatus status;
+    public String status;//ONGOING,COMPLETED or CANCELLED
 }
 
 
