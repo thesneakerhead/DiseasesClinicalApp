@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -182,5 +183,17 @@ public class FirebaseLogin extends AppCompatActivity {
                 .build();
         signInLauncher.launch(signInIntent);
 
+    }
+    //to be deleted, used to upload clinic info.
+    public void uploadClinicInfo()
+    {
+        Update2Firebase update = new Update2Firebase();
+        ClinicInfo clinicInfo = new ClinicInfo();
+        ArrayList<Double> Latlng = new ArrayList<Double>();
+        Latlng.add(103.872312298306994);
+        Latlng.add(1.36995099695439);
+        clinicInfo.setClinicName("Changi General Hospital");
+        clinicInfo.setLatLng(Latlng);
+        update.uploadClinicsToFirebase(clinicInfo,FirebaseLogin.this);
     }
 }
