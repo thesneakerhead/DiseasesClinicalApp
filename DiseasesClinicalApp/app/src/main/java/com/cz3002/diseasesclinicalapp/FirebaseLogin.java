@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
@@ -34,6 +35,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import lombok.SneakyThrows;
+
 public class FirebaseLogin extends AppCompatActivity {
 
     private static int AUTH_REQUEST_CODE = 7192;
@@ -47,6 +50,7 @@ public class FirebaseLogin extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
             new FirebaseAuthUIActivityResultContract(),
             new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
+                @SneakyThrows
                 @Override
                 public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
                     onSignInResult(result);
@@ -66,8 +70,15 @@ public class FirebaseLogin extends AppCompatActivity {
 
     }
 
+    @SneakyThrows
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        HttpRequestHandler hndlr = new HttpRequestHandler();
+        hndlr.joinQueue("a26df274-c10c-41a0-aec4-38d7d891d966","testing123")
+            .thenApply(s->{
+                Log.e("the result", s);
+                return null;
+            });
         firebaseAuth = FirebaseAuth.getInstance();
         dbMngr = new FirebaseDatabaseManager(FirebaseLogin.this);
         super.onCreate(savedInstanceState);
@@ -101,10 +112,14 @@ public class FirebaseLogin extends AppCompatActivity {
                 .signOut(FirebaseLogin.this)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     public void onComplete(@NonNull Task<Void> task) {
-                        dbMngr.appDBApp.delete();
-                        dbMngr.clinicDBApp.delete();
+                        unmountDatabases();
                     }
                 });
+    }
+    public void unmountDatabases()
+    {
+        dbMngr.appDBApp.delete();
+        dbMngr.clinicDBApp.delete();
     }
 
 
@@ -113,7 +128,7 @@ public class FirebaseLogin extends AppCompatActivity {
 
 
 
-    private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
+    private void onSignInResult(FirebaseAuthUIAuthenticationResult result) throws JsonProcessingException {
 
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
@@ -123,7 +138,6 @@ public class FirebaseLogin extends AppCompatActivity {
             idText.setText(user.getUid());
             //check if account is new/clinic/patient account
             handleAccount(user.getUid());
-
         } else {
 
         }
@@ -142,11 +156,13 @@ public class FirebaseLogin extends AppCompatActivity {
                     User loggedInUser = snapshot.getValue(t);
                     if(loggedInUser.isClinicAcc==true)
                     {
+                        //unmountDatabases();
                         Intent i = new Intent(FirebaseLogin.this,ClinicPage.class);
                         startActivity(i);
                     }
                     if(loggedInUser.isClinicAcc==false)
                     {
+                        //unmountDatabases();
                         Intent i = new Intent(FirebaseLogin.this,PatientPage.class);
                         startActivity(i);
                     }

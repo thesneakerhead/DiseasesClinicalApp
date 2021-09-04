@@ -1,6 +1,7 @@
 package com.cz3002.diseasesclinicalapp;
 
 import android.content.Context;
+import android.database.Observable;
 
 import androidx.annotation.NonNull;
 
@@ -11,6 +12,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.UUID;
+import java.util.AbstractCollection.*;
 
 //to be deleted later, here just to upload stuff to clinic/patient database
 public class Update2Firebase {
@@ -30,6 +32,7 @@ public class Update2Firebase {
     {
         FirebaseDatabaseManager dbManager = new FirebaseDatabaseManager(context);
         String clinicUUID = generateUUID();
+        
         dbManager.clinicDatabase.getReference("clinicDictionary").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
