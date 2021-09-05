@@ -106,21 +106,9 @@ public class FirebaseLogin extends AppCompatActivity {
                 .signOut(FirebaseLogin.this)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     public void onComplete(@NonNull Task<Void> task) {
-                        unmountDatabases();
                     }
                 });
     }
-    public void unmountDatabases()
-    {
-        dbMngr.appDBApp.delete();
-        dbMngr.clinicDBApp.delete();
-    }
-
-
-
-
-
-
 
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) throws JsonProcessingException {
 
@@ -150,7 +138,7 @@ public class FirebaseLogin extends AppCompatActivity {
                     User loggedInUser = snapshot.getValue(t);
                     if(loggedInUser.isClinicAcc==true)
                     {
-                        //unmountDatabases();
+
                         Intent i = new Intent(FirebaseLogin.this,ClinicPage.class);
                         startActivity(i);
                     }
