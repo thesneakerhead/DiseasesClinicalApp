@@ -73,12 +73,6 @@ public class FirebaseLogin extends AppCompatActivity {
     @SneakyThrows
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        HttpRequestHandler hndlr = new HttpRequestHandler();
-        hndlr.joinQueue("a26df274-c10c-41a0-aec4-38d7d891d966","testing123")
-            .thenApply(s->{
-                Log.e("the result", s);
-                return null;
-            });
         firebaseAuth = FirebaseAuth.getInstance();
         dbMngr = new FirebaseDatabaseManager(FirebaseLogin.this);
         super.onCreate(savedInstanceState);

@@ -39,13 +39,21 @@ public class HttpRequestHandler {
         }
     }
     public CompletableFuture<String> joinQueue(String clinicUID, String patientUID) throws JsonProcessingException {
-
         Map<String,String> payload = new HashMap<>();
         payload.put("clinicUID",clinicUID);
         payload.put("patientUID",patientUID);
         String json = new ObjectMapper().writeValueAsString(payload);
         CompletableFuture<String> completableFuture =
-                CompletableFuture.supplyAsync(() ->post("https://us-central1-clinicaldatabase-49662.cloudfunctions.net/joinQueue",json));
+                CompletableFuture.supplyAsync(() ->post("https://asia-southeast1-clinicaldatabase-49662.cloudfunctions.net/joinQueue",json));
+        return completableFuture;
+    }
+    public CompletableFuture<String> checkQueuePos(String clinicUID, String patientUID) throws JsonProcessingException{
+        Map<String,String> payload = new HashMap<>();
+        payload.put("clinicUID",clinicUID);
+        payload.put("patientUID",patientUID);
+        String json = new ObjectMapper().writeValueAsString(payload);
+        CompletableFuture<String> completableFuture =
+                CompletableFuture.supplyAsync(() ->post("https://asia-southeast1-clinicaldatabase-49662.cloudfunctions.net/checkQueuePos",json));
         return completableFuture;
     }
 
