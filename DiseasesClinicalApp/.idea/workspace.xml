@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b5c62e7-c890-4210-bd74-b9de624f619e" name="Default Changelist" comment="android stuff" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_4_API_30]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DiseasesClinicalApp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DiseasesClinicalApp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DiseasesClinicalApp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1xIXFjvQITFuv1YjAeVyLeXQqDo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_4_API_30" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-09-04T14:02:39.252Z" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Pixel_3a_API_30" />
+    <property name="android-custom-viewC:/Users/Jacob/AppData/Local/Android/Sdk/sources/android-30/android/widget/TextView.java_SELECTED" value="TextView" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/CalorieHelper" />
+    <property name="multi-representation-previewC:/Users/Jacob/AppData/Local/Android/Sdk/sources/android-30/android/widget/TextView.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.701722253">
+      <recent name="com.cz3002.diseasesclinicalapp" />
+    </key>
+    <key name="android.template.-1951211232">
+      <recent name="com.cz3002.diseasesclinicalapp" />
+    </key>
+    <key name="android.template.-956560815">
+      <recent name="com.cz3002.diseasesclinicalapp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="DiseasesClinicalApp.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.cz3002.diseasesclinicalapp.testactivity" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="true" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiseasesClinicalApp [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DiseasesClinicalApp:app [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Gradle.DiseasesClinicalApp [signingReport]" />
+      <item itemvalue="Gradle.DiseasesClinicalApp:app [signingReport]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.DiseasesClinicalApp [signingReport]" />
+        <item itemvalue="Gradle.DiseasesClinicalApp:app [signingReport]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b5c62e7-c890-4210-bd74-b9de624f619e" name="Default Changelist" comment="" />
+      <created>1630043474473</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630043474473</updated>
+    </task>
+    <task id="LOCAL-00001" summary="android stuff">
+      <created>1630046954212</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630046954212</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="android stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="android stuff" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="287" y="227" key="#PSD" timestamp="1630829998478">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="287" y="227" key="#PSD/0.0.1536.960@0.0.1536.960" timestamp="1630829998478" />
+    <state x="225" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1630854257568">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="225" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.960@0.0.1536.960" timestamp="1630854257568" />
+    <state x="575" y="188" key="#com.intellij.ide.util.MemberChooser" timestamp="1630770988299">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="575" y="188" key="#com.intellij.ide.util.MemberChooser/0.0.1536.960@0.0.1536.960" timestamp="1630770988299" />
+    <state x="719" y="212" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1630484837848" />
+    <state x="499" y="271" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1630853425487">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="499" y="271" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.960@0.0.1536.960" timestamp="1630853425487" />
+    <state x="500" y="228" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1630854200337">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="500" y="228" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.960@0.0.1536.960" timestamp="1630854200337" />
+    <state x="94" y="94" width="1349" height="773" key="AVDManager" timestamp="1630781450279">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="94" y="94" width="1349" height="773" key="AVDManager/0.0.1536.960@0.0.1536.960" timestamp="1630781450279" />
+    <state x="567" y="233" key="AndroidProcessChooserDialog" timestamp="1630763959275">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="567" y="233" key="AndroidProcessChooserDialog/0.0.1536.960@0.0.1536.960" timestamp="1630763959275" />
+    <state x="550" y="236" key="FileChooserDialogImpl" timestamp="1630331109690">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="550" y="236" key="FileChooserDialogImpl/0.0.1536.960@0.0.1536.960" timestamp="1630331109690" />
+    <state width="1492" height="180" key="GridCell.Tab.0.bottom" timestamp="1630854124839">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1492" height="180" key="GridCell.Tab.0.bottom/0.0.1536.960@0.0.1536.960" timestamp="1630854124839" />
+    <state width="1859" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1630487248541" />
+    <state width="1492" height="180" key="GridCell.Tab.0.center" timestamp="1630854124839">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1492" height="180" key="GridCell.Tab.0.center/0.0.1536.960@0.0.1536.960" timestamp="1630854124839" />
+    <state width="1859" height="278" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1630487248541" />
+    <state width="1492" height="180" key="GridCell.Tab.0.left" timestamp="1630854124839">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1492" height="180" key="GridCell.Tab.0.left/0.0.1536.960@0.0.1536.960" timestamp="1630854124839" />
+    <state width="1859" height="278" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1630487248540" />
+    <state width="1492" height="180" key="GridCell.Tab.0.right" timestamp="1630854124839">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state width="1492" height="180" key="GridCell.Tab.0.right/0.0.1536.960@0.0.1536.960" timestamp="1630854124839" />
+    <state width="1859" height="278" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1630487248541" />
+    <state x="279" y="126" key="SettingsEditor" timestamp="1630847901109">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="279" y="126" key="SettingsEditor/0.0.1536.960@0.0.1536.960" timestamp="1630847901109" />
+    <state x="349" y="142" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1630483861683" />
+    <state x="472" y="290" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1630781127132">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="472" y="290" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1536.960@0.0.1536.960" timestamp="1630781127131" />
+    <state x="494" y="224" key="run.anything.popup" timestamp="1630770427079">
+      <screen x="0" y="0" width="1536" height="960" />
+    </state>
+    <state x="494" y="224" key="run.anything.popup/0.0.1536.960@0.0.1536.960" timestamp="1630770427079" />
+    <state x="616" y="252" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1630487375047" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/cz3002/diseasesclinicalapp/FirebaseDatabaseManager.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
