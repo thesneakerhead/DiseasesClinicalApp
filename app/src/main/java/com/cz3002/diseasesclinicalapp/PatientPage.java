@@ -100,6 +100,7 @@ public class PatientPage extends AppCompatActivity {
             }
         });
     }
+    
     public void initPatientPage()
     {
 

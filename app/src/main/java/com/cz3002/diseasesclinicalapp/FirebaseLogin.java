@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +39,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import lombok.SneakyThrows;
+import lombok.val;
+
+import static com.google.android.gms.common.util.CollectionUtils.listOf;
 
 public class FirebaseLogin extends AppCompatActivity {
 
@@ -44,9 +50,11 @@ public class FirebaseLogin extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener listener;
     private List<AuthUI.IdpConfig> providers;
-    private Button signoutbutton;
-    private TextView idText;
     private List<FirebaseApp> appList;
+    private ArrayAdapter adapter;
+    private AutoCompleteTextView autoCompleteTextView;
+    private String selection;
+    private Button confirmButton;
     private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
             new FirebaseAuthUIActivityResultContract(),
             new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
@@ -77,25 +85,44 @@ public class FirebaseLogin extends AppCompatActivity {
         dbMngr = new FirebaseDatabaseManager(FirebaseLogin.this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firebaselogin);
-        init();
-        signoutbutton = (Button)findViewById(R.id.signout_button);
-        idText = (TextView) findViewById(R.id.idText) ;
-        signoutbutton.setOnClickListener(new View.OnClickListener() {
+        List<String> options = List.of("Patient","Clinic");
+        adapter = new ArrayAdapter(FirebaseLogin.this,R.layout.list_item,options);
+        autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+        confirmButton = findViewById(R.id.confirm_button);
+        autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selection = (String)parent.getItemAtPosition(position);
+            }
+        });
+        confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               signOut();
-               createSignInPage();
+                if(selection!=null)
+                {
+                    if (selection.equals("Patient"))
+                    {
+                        init(false);
+                    }
+                    else if(selection.equals("Clinic"))
+                    {
+                        init(true);
+                    }
+                }
             }
         });
 
+
+        //init();
     }
 
-    private void init() {
+    private void init(Boolean isAdminLogin) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             Toast.makeText(FirebaseLogin.this, "There is an account logged in: " + user.getUid(), Toast.LENGTH_SHORT).show();
         } else {
-            createSignInPage();
+            createSignInPage(isAdminLogin);
         }
 
     }
@@ -117,7 +144,6 @@ public class FirebaseLogin extends AppCompatActivity {
             // Successfully signed in
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
             FirebaseUser user = mAuth.getCurrentUser();
-            idText.setText(user.getUid());
             //check if account is new/clinic/patient account
             handleAccount(user.getUid());
         } else {
@@ -136,13 +162,13 @@ public class FirebaseLogin extends AppCompatActivity {
                     Log.d("userexists", "This is not the first time signing in");
                     GenericTypeIndicator<User> t = new GenericTypeIndicator<User>(){};
                     User loggedInUser = snapshot.getValue(t);
-                    if(loggedInUser.isClinicAcc==true)
+                    if(loggedInUser.isClinicAcc==true && selection.equals("Clinic"))
                     {
 
                         Intent i = new Intent(FirebaseLogin.this,ClinicPage.class);
                         startActivity(i);
                     }
-                    if(loggedInUser.isClinicAcc==false)
+                    if(loggedInUser.isClinicAcc==false && selection.equals("Patient"))
                     {
                         //unmountDatabases();
                         Intent i = new Intent(FirebaseLogin.this,PatientPage.class);
@@ -166,20 +192,33 @@ public class FirebaseLogin extends AppCompatActivity {
         });
     }
 
-    public void createSignInPage()
+    public void createSignInPage(Boolean isAdminLogin)
     {
-
-        providers = Arrays.asList(
-                new AuthUI.IdpConfig.GoogleBuilder().build(), // Log in using Google
-                new AuthUI.IdpConfig.EmailBuilder().build(), // Log in using Email
-                new AuthUI.IdpConfig.FacebookBuilder().build(), // Log in using Facebook
-                new AuthUI.IdpConfig.PhoneBuilder().build() //Log in using Phone
-        );
-        Intent signInIntent = AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .build();
-        signInLauncher.launch(signInIntent);
+        if (!isAdminLogin)
+            {
+                providers = Arrays.asList(
+                    new AuthUI.IdpConfig.GoogleBuilder().build(), // Log in using Google
+                    new AuthUI.IdpConfig.EmailBuilder().build(), // Log in using Email
+                    new AuthUI.IdpConfig.FacebookBuilder().build(), // Log in using Facebook
+                    new AuthUI.IdpConfig.PhoneBuilder().build() //Log in using Phone
+                );
+                Intent signInIntent = AuthUI.getInstance()
+                    .createSignInIntentBuilder()
+                    .setAvailableProviders(providers)
+                    .build();
+                signInLauncher.launch(signInIntent);
+            }
+        else if (isAdminLogin)
+        {
+            providers = Arrays.asList(
+                    new AuthUI.IdpConfig.EmailBuilder().build() // Log in using Email
+            );
+            Intent signInIntent = AuthUI.getInstance()
+                    .createSignInIntentBuilder()
+                    .setAvailableProviders(providers)
+                    .build();
+            signInLauncher.launch(signInIntent);
+        }
 
     }
     //to be deleted, used to upload clinic info.
