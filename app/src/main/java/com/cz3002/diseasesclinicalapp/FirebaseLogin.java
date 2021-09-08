@@ -126,17 +126,6 @@ public class FirebaseLogin extends AppCompatActivity {
         }
 
     }
-    private void signOut()
-    {
-        //unmounting the databases when logging out
-        AuthUI.getInstance()
-                .signOut(FirebaseLogin.this)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    public void onComplete(@NonNull Task<Void> task) {
-                    }
-                });
-    }
-
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) throws JsonProcessingException {
 
         IdpResponse response = result.getIdpResponse();
@@ -173,6 +162,15 @@ public class FirebaseLogin extends AppCompatActivity {
                         //unmountDatabases();
                         Intent i = new Intent(FirebaseLogin.this,PatientPage.class);
                         startActivity(i);
+                    }
+                    else{
+                        Toast.makeText(FirebaseLogin.this, "Account and Domain doesnt Match!" , Toast.LENGTH_SHORT).show();
+                        AuthUI.getInstance()
+                                .signOut(FirebaseLogin.this)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                    }
+                                });
                     }
 
                 }

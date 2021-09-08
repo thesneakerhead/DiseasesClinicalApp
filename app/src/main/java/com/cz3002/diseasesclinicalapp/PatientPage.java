@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.ObservableList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -12,6 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,10 +30,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class PatientPage extends AppCompatActivity {
-    FirebaseDatabaseManager dbMngr;
-    Button joinQueueButton;
-    TextView queuePosText;
-    Handler mHandler = new Handler();
+    private FirebaseDatabaseManager dbMngr;
+    private Button joinQueueButton;
+    private TextView queuePosText;
+    private Button logoutButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,7 @@ public class PatientPage extends AppCompatActivity {
         HttpRequestHandler hndlr = new HttpRequestHandler();
         joinQueueButton = findViewById(R.id.join_queue);
         queuePosText = findViewById(R.id.QueueText);
+        logoutButton = findViewById(R.id.logout_button);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         // Button to join queue
@@ -57,7 +62,12 @@ public class PatientPage extends AppCompatActivity {
             }
         });
         listenForQueueChanges("a26df274-c10c-41a0-aec4-38d7d891d966",user.getUid());
-
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
 
 
 
@@ -130,5 +140,16 @@ public class PatientPage extends AppCompatActivity {
 
             }
         });
+    }
+    private void signOut()
+    {
+        AuthUI.getInstance()
+                .signOut(PatientPage.this)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Intent i = new Intent(PatientPage.this,FirebaseLogin.class);
+                        startActivity(i);
+                    }
+                });
     }
 }
