@@ -13,6 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DiseasesClinicalApp">
+        <activity android:name=".SymptomSearch"
+            android:exported="true"></activity>
         <activity android:name=".ClinicPage" />
         <activity android:name=".PatientPage" />
         <activity android:name=".FirebaseLogin">
