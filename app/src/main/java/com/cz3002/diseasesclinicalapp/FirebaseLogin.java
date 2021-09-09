@@ -84,6 +84,12 @@ public class FirebaseLogin extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         dbMngr = new FirebaseDatabaseManager(FirebaseLogin.this);
         super.onCreate(savedInstanceState);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user!=null)
+        {
+            Intent i = new Intent(FirebaseLogin.this,PatientPage.class);
+            startActivity(i);
+        }
         setContentView(R.layout.firebaselogin);
         List<String> options = List.of("Patient","Clinic");
         adapter = new ArrayAdapter(FirebaseLogin.this,R.layout.list_item,options);
@@ -157,7 +163,7 @@ public class FirebaseLogin extends AppCompatActivity {
                         Intent i = new Intent(FirebaseLogin.this,ClinicPage.class);
                         startActivity(i);
                     }
-                    if(loggedInUser.isClinicAcc==false && selection.equals("Patient"))
+                    else if(loggedInUser.isClinicAcc==false && selection.equals("Patient"))
                     {
                         //unmountDatabases();
                         Intent i = new Intent(FirebaseLogin.this,PatientPage.class);
@@ -175,11 +181,21 @@ public class FirebaseLogin extends AppCompatActivity {
 
                 }
                 else
-                {
-                    Log.d("usernotexists", "First time user is signing in, creating data for user");
-                    //assuming only patients register through the app
-                    PatientUser newUser  = new PatientUser();
-                    dbRef.setValue(newUser);
+                {  if(selection.equals("Patient")) {
+                        Log.d("usernotexists", "First time user is signing in, creating data for user");
+                        //assuming only patients register through the app
+                        PatientUser newUser  = new PatientUser();
+                        dbRef.setValue(newUser);
+                    }
+                    else if(selection.equals("Clinic")) {
+                    Log.d("nosuchadmin", "there is no such clinical user");
+                    AuthUI.getInstance()
+                            .signOut(FirebaseLogin.this)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                public void onComplete(@NonNull Task<Void> task) {
+                                }
+                            });
+                    }
                 }
             }
 
